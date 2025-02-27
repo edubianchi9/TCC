@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>  
+    <link rel="stylesheet" href="criacao_conta.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Nunito:wght@200..1000&display=swap');
+
+    body {
+        font-family: "Nunito", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to bottom, #c38213, #ae9c59);
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .container {
+        color: white;
+        font-size: 115%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .form-container {
+        background: rgba(37, 15, 0, 0.5);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    .form-container input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(37, 15, 0, 0.3);
+        color: white;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        background: orange;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    .form-container button:hover {
+        background: rgb(178, 116, 0);
+    }
+
+    .back-link a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .password-container {
+        position: relative;
+        width: 90%;
+        margin: auto;
+    }
+
+.password-container input {
+     width: 100%;
+     padding-right: 0px; 
+}
+
+.password-container i {
+     position: absolute;
+     right: 10px;
+     top: 50%;
+     transform: translateY(-55%);
+     cursor: pointer;
+     color: white;
+     font-size: 16px;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <h1>MLX Ltda</h1>
+        <p>Recupere sua senha e volte a usar o nosso Software.</p>
+    </div>
+    
+    <div class="form-container">
+        <h2>Recuperar Senha</h2>
+        <form>
+            <input type="email" name="email" placeholder="Digite seu email" required>
+            <input type="email" name="confirm_email" placeholder="Confirme seu email" required>
+
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Digite sua nova senha" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+
+            <div class="password-container">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme sua senha" required>
+                <i class="fas fa-eye" id="toggleConfirmPassword"></i>
+            </div>
+
+            <button type="submit">Recuperar senha</button>
+        </form>
+        <div class="back-link">
+            <a href="telainicial.html">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", function() {
+            let passwordField = document.getElementById("password");
+            let type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+            this.classList.toggle("fa-eye-slash");
+        });
+
+        document.getElementById("toggleConfirmPassword").addEventListener("click", function() {
+            let confirmPasswordField = document.getElementById("confirm_password");
+            let type = confirmPasswordField.type === "password" ? "text" : "password";
+            confirmPasswordField.type = type;
+            this.classList.toggle("fa-eye-slash");
+        });
+    </script>
+</body>
+</html>
